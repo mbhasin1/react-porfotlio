@@ -72,11 +72,12 @@ export default function Home() {
       <main className="bg-white px-10 md:px-20 lg:px-40">
         <section className="min-h-screen">
           <nav className ="py-10 mb-12 flex justify-between">
-            <h1 className = "text-xl font-burtons">Manav Bhasin's Personal Website</h1>
+            <h1 className = "text-xl font-burtons">Manav Bhasin&apos;s Personal Website</h1>
             <ul className="flex items-center">
 
               <li> <BsFillMoonStarsFill className="cursor-pointer text-2xl"/></li>
-              <li><a className ="bg-gradient-to-r from-emerald-200 to-emerald-800 text-white px-4 py-2 rounded-md ml-8" href='resume.pdf' alt="alt text" target="_blank" rel="noopener noreferrer">Resume</a></li>
+              <li><a className ="bg-gradient-to-r from-emerald-200 to-emerald-800 text-white px-4 py-2 rounded-md ml-8" href='resume.pdf' alt="alt text" target="_blank" rel="
+              noreferrer">Resume</a></li>
             </ul>
           </nav>
           <div className="text-center p-10">
@@ -87,7 +88,7 @@ export default function Home() {
             </p>
           </div>
           <div className="text-5xl flex justify-center">
-            <a href = "https://www.linkedin.com/in/manav-bhasin-87b135192" target="_blank" className="">
+            <a href = "https://www.linkedin.com/in/manav-bhasin-87b135192" target="_blank" rel="noreferrer" className="">
             <AiFillLinkedin className = "text-5xl hover:scale-125"/>
             </a>
           </div>
@@ -111,7 +112,7 @@ export default function Home() {
               <p className="py-2 max-w-sm mx-auto">
                 Familiar with creating various applications with various tech stacks.
               </p>
-              <h4 className="py-4 text-lg text-emerald-800">Technologies I've Used</h4>
+              <h4 className="py-4 text-lg text-emerald-800">Technologies I&apos;ve Used</h4>
               <p className="text-gray-800 py-1">Python (FastAPI, Flask)</p>
               <p className="text-gray-800 py-1">Node.js (Express) </p>
               <p className="text-gray-800 py-1">SQL</p>
@@ -127,7 +128,7 @@ export default function Home() {
               <p className="py-2 max-w-sm mx-auto">
                 Experienced with many state of the art machine learning and data mining algorithms. 
               </p>
-              <h4 className="py-4 text-lg text-emerald-800">Technologies I've Used</h4>
+              <h4 className="py-4 text-lg text-emerald-800">Technologies I&apos;ve Used</h4>
               <p className="text-gray-800 py-1">Pytorch</p>
               <p className="text-gray-800 py-1">PySpark (Express) </p>
               <p className="text-gray-800 py-1">Pandas</p>
@@ -143,7 +144,7 @@ export default function Home() {
               <p className="py-2 max-w-sm mx-auto">
                 Familiar with creating responsive websites with a variety of frameworks.
               </p>
-              <h4 className="py-4 text-lg text-emerald-800">Technologies I've Used</h4>
+              <h4 className="py-4 text-lg text-emerald-800">Technologies I&apos;ve Used</h4>
               {/* <div className="flex justify-center">
                 <DiAngularSimple className="mr-2 text-xl"/>
                 
