@@ -1,11 +1,66 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import {BsFillMoonStarsFill} from 'react-icons/bs';
+import {AiFillLinkedin} from 'react-icons/ai'
+import Image from 'next/image';
+import avatar from "../public/avatar.png"
+import web from "../public/web.png"
+import why from "../public/why.png"
+import download from "../public/download.png"
+import dash from "../public/dash.png"
+import ml from "../public/pngwing.com.png"
+import { DiAngularSimple } from 'react-icons/di'
 
-const inter = Inter({ subsets: ['latin'] })
+import Link from 'next/link'
+import { FaGithub } from 'react-icons/fa'
+
+
+import { useState } from 'react';
+
+function ImageModal({ src, alt, content, title, github_link}) {
+  //import avatar from "../public/avatar.png"
+  const [showModal, setShowModal] = useState(false);
+  const modalStyles = {
+    position: 'fixed',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    backgroundColor: 'white',
+    boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+    padding: '20px',
+    borderRadius: '5px',
+    zIndex: '1'
+  };
+  return (
+    <>
+    <div className="basis-1/3 flex-1" >
+      <h3 className="text-center"> {title} </h3>
+      <Image onClick={() => setShowModal(true)} src={src} alt={'../public/avatar.png'} className="rounded-3xl cursor-pointer hover:scale-105 py-2 object-cover "
+                width={"100%"}
+                height={"100%"}
+                layout="responsive"/>
+      {showModal && (
+        <div style={modalStyles}>
+          <p>{content}</p>
+          <Link onClick={() => setShowModal(false)} href={github_link !== undefined ? github_link : 'https://github.com'} target="_blank" rel="noreferrer">
+            <div className="flex justify-center py-2">
+              <FaGithub className="h-6 text-gray-800" />
+              <span className="ml-2 text-m font-semibold text-gray-800">
+                Check out this project on Github
+              </span>
+            </div>
+           
+          </Link>
+          <button onClick={() => setShowModal(false)} className="bg-red-600 text-white py-1 px-2 my-2 bottom-0 right-0">Close</button>
+        </div>
+      
+      )}
+    </div>
+    </>
+  );
+}
 
 export default function Home() {
+
   return (
     <>
       <Head>
@@ -14,109 +69,104 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>pages/index.js</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
+      <main className="bg-white px-10 md:px-20 lg:px-40">
+        <section className="min-h-screen">
+          <nav className ="py-10 mb-12 flex justify-between">
+            <h1 className = "text-xl font-burtons">Manav Bhasin's Personal Website</h1>
+            <ul className="flex items-center">
+
+              <li> <BsFillMoonStarsFill className="cursor-pointer text-2xl"/></li>
+              <li><a className ="bg-gradient-to-r from-emerald-200 to-emerald-800 text-white px-4 py-2 rounded-md ml-8" href='resume.pdf' alt="alt text" target="_blank" rel="noopener noreferrer">Resume</a></li>
+            </ul>
+          </nav>
+          <div className="text-center p-10">
+            <h2 className="text-5xl text-emerald-900 py-3 font-medium md:text-6xl"> Manav Bhasin </h2>
+            <h3 className = "text-2xl py-2 md:text-3xl"> Aspiring Full Stack Engineer</h3>
+            <p className ="text-md py-5 leading-8 text-gray-800 max-w-xl mx-auto"> 
+              Recent graduate of Purdue University in Computer Engineering. Pursuing a graduate degree at the Univeristy of Fuck my life. Currently seeking a software engineering internship on either a full-stack or back-end team.
+            </p>
+          </div>
+          <div className="text-5xl flex justify-center">
+            <a href = "https://www.linkedin.com/in/manav-bhasin-87b135192" target="_blank" className="">
+            <AiFillLinkedin className = "text-5xl hover:scale-125"/>
             </a>
           </div>
-        </div>
-
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-          <div className={styles.thirteen}>
-            <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
-              priority
-            />
+          <div className = "relative mx-auto ">
+            <Image src = {avatar} className="rounded-t-full rounded-b-full py-3 mx-auto max-w-sm"/>
           </div>
-        </div>
+        </section>
 
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
+        <section>
+          {/* <div>
+            <h3 className="text-3xl text-center">About Me </h3>
+            <p className = "text-md py-2 leading-8 text-center"> Fill this in later. Worked for <span className="text-emerald-800">startup</span></p>
+          </div> */}
+          <h3 className="text-3xl text-center"> Skills</h3>
+          <div className="lg:flex gap-10">
+            <div className="text-center shadow-lg p-10 rounded-xl my-10  dark:bg-white mx-auto">
+              <Image src={download} width={100} height={100} className="mx-auto block" />
+              <h3 className="text-lg font-medium pt-8 pb-2  ">
+                Backend Development
+              </h3>
+              <p className="py-2 max-w-sm mx-auto">
+                Familiar with creating various applications with various tech stacks.
+              </p>
+              <h4 className="py-4 text-lg text-emerald-800">Technologies I've Used</h4>
+              <p className="text-gray-800 py-1">Python (FastAPI, Flask)</p>
+              <p className="text-gray-800 py-1">Node.js (Express) </p>
+              <p className="text-gray-800 py-1">SQL</p>
+              
+            </div>
+          </div>
+          <div className="lg:flex gap-10">
+            <div className="text-center shadow-lg p-10 rounded-xl my-10  dark:bg-white mx-auto">
+              <Image src={ml} width={100} height={100} className="mx-auto block" />
+              <h3 className="text-lg font-medium pt-8 pb-2  ">
+                Machine Learning / Data Mining
+              </h3>
+              <p className="py-2 max-w-sm mx-auto">
+                Experienced with many state of the art machine learning and data mining algorithms. 
+              </p>
+              <h4 className="py-4 text-lg text-emerald-800">Technologies I've Used</h4>
+              <p className="text-gray-800 py-1">Pytorch</p>
+              <p className="text-gray-800 py-1">PySpark (Express) </p>
+              <p className="text-gray-800 py-1">Pandas</p>
+              
+            </div>
+          </div>
+          <div className="lg:flex gap-10">
+            <div className="text-center shadow-lg p-10 rounded-xl my-10  dark:bg-white mx-auto">
+              <Image src={web} width={100} height={100} className="mx-auto block" />
+              <h3 className="text-lg font-medium pt-8 pb-2  ">
+                Web Development
+              </h3>
+              <p className="py-2 max-w-sm mx-auto">
+                Familiar with creating responsive websites with a variety of frameworks.
+              </p>
+              <h4 className="py-4 text-lg text-emerald-800">Technologies I've Used</h4>
+              {/* <div className="flex justify-center">
+                <DiAngularSimple className="mr-2 text-xl"/>
+                
+              </div> */}
+              <p className="text-gray-800 py-1">Angular</p>
+              <p className="text-gray-800 py-1">React</p>
+              <p className="text-gray-800 py-1">Html</p>
+              <p className="text-gray-800 py-1">CSS (Tailwind)</p>
+            </div>
+          </div>
+          <h3 className="text-3xl m-0"> Portfolio</h3>
+          <div>
+            
+            <div className='flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap'>
+            
+              <ImageModal src={dash} alt="image 1" content={'A dashboard intended for a hostpital local to Purudes campus to better organize their home health program. The dashboard allows hostpital admins to view the status and appointments of their nurses and patients throughout the day. We have also implemented a scheduling system that allows admins and nurses to schedule appointments.'} title="Home Health Dashboard" github_link={'https://github.com/AidanYom/Home-Health-Dashboard'}/>
+              <ImageModal src={why} alt="image 2" content={'An imporved K-Means algorithm which combines the K-Means++ Algorithm with the Local Search Algorithm. This improved combination was shown to reduce the effective cost of K-means by 15-45 percent. This was the implementation of a paper proposed by S Lattanzi. I hope to publish a python package with the improved algorithm soon.'} title="A Better K-Means Clustering Algorithm"/>
+              <ImageModal src={dash} alt="image 1" content={'A dashboard intended for a hostpital local to Purudes campus to better organize their home health program. The dashboard allows hostpital admins to view the status and appointments of their nurses and patients throughout the day. We have also implemented a scheduling system that allows admins and nurses to schedule appointments.'} title="Home Health Dashboard" github_link={'https://github.com/AidanYom/Home-Health-Dashboard'}/>
+              <ImageModal src={dash} alt="image 1" content={'A dashboard intended for a hostpital local to Purudes campus to better organize their home health program. The dashboard allows hostpital admins to view the status and appointments of their nurses and patients throughout the day. We have also implemented a scheduling system that allows admins and nurses to schedule appointments.'} title="Home Health Dashboard" github_link={'https://github.com/AidanYom/Home-Health-Dashboard'}/>
 
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
-        </div>
+            </div>
+          </div>
+        </section>
       </main>
     </>
   )
