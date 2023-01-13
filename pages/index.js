@@ -8,6 +8,8 @@ import why from "../public/why.png"
 import download from "../public/download.png"
 import dash from "../public/dash.png"
 import ml from "../public/pngwing.com.png"
+import meta from "../public/meta.png"
+import movie from "../public/movie.png"
 import { DiAngularSimple } from 'react-icons/di'
 
 import Link from 'next/link'
@@ -84,7 +86,7 @@ export default function Home() {
             <h2 className="text-5xl text-emerald-900 py-3 font-medium md:text-6xl"> Manav Bhasin </h2>
             <h3 className = "text-2xl py-2 md:text-3xl"> Aspiring Full Stack Engineer</h3>
             <p className ="text-md py-5 leading-8 text-gray-800 max-w-xl mx-auto"> 
-              Recent graduate of Purdue University in Computer Engineering. Pursuing a graduate degree at the Univeristy of Fuck my life. Currently seeking a software engineering internship on either a full-stack or back-end team.
+              Recent graduate of Purdue University in Computer Engineering. Pursuing a graduate degree at Purdue. Currently seeking a software engineering internship.
             </p>
           </div>
           <div className="text-5xl flex justify-center">
@@ -130,8 +132,8 @@ export default function Home() {
               </p>
               <h4 className="py-4 text-lg text-emerald-800">Technologies I&apos;ve Used</h4>
               <p className="text-gray-800 py-1">Pytorch</p>
-              <p className="text-gray-800 py-1">PySpark (Express) </p>
-              <p className="text-gray-800 py-1">Pandas</p>
+              <p className="text-gray-800 py-1">Spark (pySpark)</p>
+              <p className="text-gray-800 py-1">Scikit-Learn</p>
               
             </div>
           </div>
@@ -155,13 +157,22 @@ export default function Home() {
               <p className="text-gray-800 py-1">CSS (Tailwind)</p>
             </div>
           </div>
-          <h3 className="text-3xl m-0"> Portfolio</h3>
+          <h3 className="text-3xl m-0"> Project Portfolio</h3>
           <div>
             
             <div className='flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap'>
             
               <ImageModal src={dash} alt="image 1" content={'A dashboard intended for a hostpital local to Purudes campus to better organize their home health program. The dashboard allows hostpital admins to view the status and appointments of their nurses and patients throughout the day. We have also implemented a scheduling system that allows admins and nurses to schedule appointments.'} title="Home Health Dashboard" github_link={'https://github.com/AidanYom/Home-Health-Dashboard'}/>
               <ImageModal src={why} alt="image 2" content={'An imporved K-Means algorithm which combines the K-Means++ Algorithm with the Local Search Algorithm. This improved combination was shown to reduce the effective cost of K-means by 15-45 percent. This was the implementation of a paper proposed by S Lattanzi. I hope to publish a python package with the improved algorithm soon.'} title="A Better K-Means Clustering Algorithm"/>
+              <ImageModal src={movie} alt="image 1"
+               content={'Created a movie recomendation system which allows users to enter in a movie that they have recently watched and receive recomendations based on that. This system uses a combination of both collaborative filtering and content based filtering to provide the best recomendations.'}
+                title="Movie Recomendation Website" 
+                github_link={'https://github.com/'}/>
+              <ImageModal src={meta} alt="image 2" 
+               content={'An embedded device which utilizes data from a camera and IMU to create a dense 3D reconstruction of a specified target. After sensor data is captured on the device it is fed into a nerual network known as NERF to create the reconstruction.'}
+               title="Metaporter"
+               github_link={'https://github.com/'}/>
+              
               {/* <ImageModal src={dash} alt="image 1" content={'A dashboard intended for a hostpital local to Purudes campus to better organize their home health program. The dashboard allows hostpital admins to view the status and appointments of their nurses and patients throughout the day. We have also implemented a scheduling system that allows admins and nurses to schedule appointments.'} title="Home Health Dashboard" github_link={'https://github.com/AidanYom/Home-Health-Dashboard'}/>
               <ImageModal src={dash} alt="image 1" content={'A dashboard intended for a hostpital local to Purudes campus to better organize their home health program. The dashboard allows hostpital admins to view the status and appointments of their nurses and patients throughout the day. We have also implemented a scheduling system that allows admins and nurses to schedule appointments.'} title="Home Health Dashboard" github_link={'https://github.com/AidanYom/Home-Health-Dashboard'}/> */}
 
