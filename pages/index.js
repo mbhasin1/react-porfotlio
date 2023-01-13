@@ -35,10 +35,9 @@ function ImageModal({ src, alt, content, title, github_link}) {
   return (
     <>
     <div className="basis-1/3 flex-1" >
-      <h3 className="text-center"> {title} </h3>
-      <Image onClick={() => setShowModal(true)} src={src} alt={'../public/avatar.png'} className="rounded-3xl cursor-pointer hover:scale-105 py-2 object-cover "
-                width={"100%"}
-                height={"100%"}
+      <h3 className="text-center "> {title} </h3>
+      <Image onClick={() => setShowModal(true)} src={src} alt={'../public/avatar.png'} className=" w-full h-auto rounded-3xl cursor-pointer hover:scale-105 py-2 "
+               
                 layout="responsive"/>
       {showModal && (
         <div style={modalStyles}>
